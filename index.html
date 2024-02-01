@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      text-align: center;
+      padding-top: 15rem;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <h1>Alarm</h1>
+    <p>(It's time format is 24 hours.)</p>
+    <p id="timebox"></p>
+    <input type="text" id="sethours">
+    <input type="text" id="setminute">
+    <input type="text" id="setsecond">
+  </div>
+  <script>
+    let alarm = setInterval(function(){
+      let time = new Date();
+      let hours = time.getHours();
+      let minute = time.getMinutes();
+      let seconds = time.getSeconds();
+
+      document.getElementById("timebox").innerHTML = hours + ":" + minute + ":" + seconds;
+
+      let userhours = document.getElementById("sethours").value;
+      let userminute = document.getElementById("setminute").value;
+      let usersecond = document.getElementById("setsecond").value;
+
+      if (hours === parseInt(userhours) && minute ===parseInt(userminute) && seconds ===parseInt(usersecond)){
+        alert("alarm")
+      }
+    },)
+  </script>
+</body>
+</html>
